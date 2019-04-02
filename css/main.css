@@ -1874,16 +1874,24 @@ footer {
     .full-review__text {
       font-size: 1rem; } } */
       .reviews {
-        background-color: #cfd8dc;
-        position: relative; }
+        background-color: #cfd8dc; }
+        /* position: relative; } */
         .reviews__list {
-          min-height: 100%;
+          /* min-height: 100%;
           list-style: none;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
           -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap; } */
+          height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
         .reviews__item {
           width: 25%;
           height: 50%;
@@ -1949,7 +1957,7 @@ footer {
               align-items: center; } }
         .review__name {
           color: #ffffff;
-          font-family: Gagalin, Helvetica, sans-serif;
+          font-family: 'gagalinregular', Helvetica, sans-serif;
           font-size: 0.92857rem;
           font-weight: 400;
           line-height: 2rem;
@@ -1962,7 +1970,7 @@ footer {
               font-size: 1.57143rem; } }
         .review__text {
           color: #ffffff;
-          font-family: Ubuntu, Helvetica, sans-serif;
+          font-family: 'ubuntulight', Helvetica, sans-serif;
           font-size: 0.92857rem;
           font-weight: 300;
           line-height: 1.71429rem;
@@ -1985,6 +1993,33 @@ footer {
         -webkit-transition: all 0.3s ease-in;
         -o-transition: all 0.3s ease-in;
         transition: all 0.3s ease-in; }
+
+        .button {
+          font-family: 'ubuntumedium', Helvetica, sans-serif;
+          font-size: 0.92857rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          border-radius: 0.28571rem;
+          padding: 0.78571rem 1.07143rem;
+          border: none;
+          cursor: pointer;
+          color: #ffffff;
+          -webkit-transition: .5s;
+          -o-transition: .5s;
+          transition: .5s;
+          display: inline-block; }
+          @media screen and (max-width: 768px) {
+            .button {
+              padding: 0.78571rem 1.07143rem;
+              font-size: 0.85714rem; } }
+          .button_action_order {
+            background-color: #e35028; }
+            .button_action_order:hover {
+              background-color: #bf3c19; }
+          .button_color_black {
+            background-color: #2f3234; }
+            .button_color_black:hover {
+              background-color: #171819; }
       
       .button__more:after {
         width: 9rem;
@@ -2008,7 +2043,7 @@ footer {
         opacity: 0;
         z-index: 3;
         padding: 1.42857rem 1.07143rem;
-        font-family: 'Ubuntu', Helvetica, sans-serif;
+        font-family: 'ubunturegular', Helvetica, sans-serif;
         font-size: 1rem;
         line-height: 1.71429rem;
         will-change: auto; }
@@ -2023,8 +2058,18 @@ footer {
             width: 90%; } }
       
       .modal-form__name {
-        font-family: 'Gagalin', Helvetica, sans-serif;
+        font-family: 'gagalinregular', Helvetica, sans-serif;
         margin-bottom: 1.78571rem; }
+
+        .modal-close {
+          width: 1.07143rem;
+          height: 1.07143rem;
+          position: absolute;
+          top: 0rem;
+          right: 0.71429rem;
+          cursor: pointer;
+          display: block;
+          margin: 1.42857rem; }
 
 .order {
   background: url("../img/bg/order.jpg") center center no-repeat;
