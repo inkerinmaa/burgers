@@ -1,0 +1,7 @@
+.arrow-down {
+  text-align: center;
+  margin-bottom: 1.5625rem; }
+
+.arrow-down__pic {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s; }
