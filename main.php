@@ -34,11 +34,11 @@
     </html>    
     ';
 
-	$headers = "From: Администратор сайта <techniker357@gmail.com>\r\n".
+	$headers = "From: Администратор сайта <inkeri-maa@yandex.ru>\r\n".
 	    "MIME-Version: 1.0" . "\r\n" .
 	    "Content-type: text/html; charset=UTF-8" . "\r\n";
 
-	    $mail = mail('techniker357@gmail.com', 'Заказ', $mail_message, $headers);
+	    $mail = mail('inkeri-maa@yandex.ru', 'Заказ', $mail_message, $headers);
 	    $data;
 
 	    if ($mail) {
