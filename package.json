@@ -1,7 +1,7 @@
 {
   "name": "Burgers",
   "version": "0.0.1",
-  "description": "Loftschool",
+  "description": "Burgers site",
   "main": "main.js",
   "repository": "https://github.com/inkerinmaa/burgers.git",
   "author": "Nikita Gladkiy <techniker357@mail.ru>",

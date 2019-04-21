@@ -46,6 +46,12 @@ function styles() {
       .pipe(dest(paths.build + 'css/'));
   }
 
+function normalize() {
+  return src(paths.src + 'css/*.css')
+      .pipe(plumber())
+      .pipe(dest(paths.build + 'css/'));
+}
+
 function svgSprite() {
     return src(paths.src + 'svg/*.svg')
       .pipe(svgmin(function (file) {
@@ -145,6 +151,6 @@ exports.build = series(
 
 exports.default = series(
   clean,
-  parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images),
+  parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images, php),
   parallel(watcher, serve),
 );
