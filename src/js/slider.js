@@ -1,13 +1,13 @@
 $(function() {
   let list = $('.slider__list'),
-      sliderItemsCount = $('.slider__item').length;
+      sliderItemsCount = $('.slider__item').length,
       sliderWidth = sliderItemsCount * 100 + "%";
           // Determine width of slider in percent based on quantity of slides
-      setSliderWidth = function(element, width) {
+      let setSliderWidth = function(element, width) {
         $(element).css(width, sliderWidth);
       }
           // Animation
-      moveSlide = function(container, slideNum) {
+      let moveSlide = function(container, slideNum) {
         let items = $('.slider__item'),
             activeSlide = items.filter('.active'),
             reqItem = items.eq(slideNum),

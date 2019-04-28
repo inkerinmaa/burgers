@@ -104,10 +104,46 @@ function icons() {
         .pipe(plumber())
         .pipe(dest(paths.build + 'icons/'));
 }
-function images() {
-    return src(paths.src + 'img/*.{jpg,jpeg,png,gif,svg}')
+function images_content() {
+    return src(paths.src + 'img/content/*.{jpg,jpeg,png,gif,svg}')
       .pipe(imagemin())
-      .pipe(dest(paths.build + 'img/'));
+      .pipe(dest(paths.build + 'img/content'));
+  }
+
+  function images_bg() {
+    return src(paths.src + 'img/bg/*.{jpg,jpeg,png,gif,svg}')
+      .pipe(imagemin())
+      .pipe(dest(paths.build + 'img/bg'));
+  }
+
+  function images_bg_best() {
+    return src(paths.src + 'img/bg/bg-best/*.{jpg,jpeg,png,gif,svg}')
+      .pipe(imagemin())
+      .pipe(dest(paths.build + 'img/bg/bg-best'));
+  }
+
+  function images_bg_menu() {
+    return src(paths.src + 'img/bg/bg-menu/*.{jpg,jpeg,png,gif,svg}')
+      .pipe(imagemin())
+      .pipe(dest(paths.build + 'img/bg/bg-menu'));
+  }
+
+  function images_texture() {
+    return src(paths.src + 'img/bg/texture/*.{jpg,jpeg,png,gif,svg}')
+      .pipe(imagemin())
+      .pipe(dest(paths.build + 'img/bg/texture'));
+  }
+
+  function images_photos() {
+    return src(paths.src + 'img/photos/*.{jpg,jpeg,png,gif,svg}')
+      .pipe(imagemin())
+      .pipe(dest(paths.build + 'img/photos'));
+  }
+
+  function images_slider() {
+    return src(paths.src + 'img/content/burgers-slider/*.{jpg,jpeg,png,gif,svg}')
+      .pipe(imagemin())
+      .pipe(dest(paths.build + 'img/content/burgers-slider'));
   }
 
 function php() {
@@ -139,18 +175,25 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.scriptsVendors = scriptsVendors;
 exports.htmls = htmls;
-exports.images = images;
+exports.images_content = images_content;
+exports.images_bg = images_bg;
+exports.images_bg_menu = images_bg_menu;
+exports.images_bg_best = images_bg_best;
+exports.images_texture = images_texture;
+exports.images_photos = images_photos;
+exports.images_slider = images_slider;
+exports.fonts = fonts;
 exports.svgSprite = svgSprite;
 exports.clean = clean;
 exports.watcher = watcher;
 
 exports.build = series(
   clean,
-  parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images)
+  parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images_content, images_bg, images_bg_menu, images_bg_best, images_texture, images_photos, images_slider, fonts)
 );
 
 exports.default = series(
   clean,
-  parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images, php),
+  parallel(styles, normalize, svgSprite, scripts, scriptsVendors, htmls, images_content, images_bg, images_bg_menu,images_bg_best,images_texture, images_photos, images_slider, fonts, icons, php),
   parallel(watcher, serve),
 );
